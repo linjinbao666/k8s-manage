@@ -1,0 +1,28 @@
+server:
+  port: 9004
+  servlet:
+    context-path: /resourcemanagement
+logging:
+  file:
+    path: logs
+  config: classpath:logback-spring.xml
+spring:
+  application:
+    name: resource-manage
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: true
+    database-platform: ecs.config.MySQL5InnoDBDialectUtf8mb4
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB
+      file-size-threshold: 2KB
+  profiles:
+    active: @profile.active@

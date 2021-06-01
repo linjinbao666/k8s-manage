@@ -1,0 +1,48 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: aic-manager-application
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ecs
+    username: root
+    password: 369369
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 200MB
+      max-request-size: 215MB
+      file-size-threshold: 2KB
+  rabbitmq:
+    addresses: 47.105.191.240
+    username: admin
+    password: fx0202Admin^
+    port: 5672
+kubernetes:
+  admin-conf: classpath:k8s/admin.conf
+
+# 工作中心审核地址
+approval:
+  login_url: http://47.104.242.211:9090/workcenter/api/v1/user/loginWithNoVCode
+  approval_url: http://47.104.242.211:9090/workcenter/api/v1/approval/create
+  username: linjb
+  md5Password: e10adc3949ba59abbe56e057f20f883e
+
+minio:
+  url: 172.16.12.22:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
+
+#nfs:
+#  ip: 172.16.12.22
+#  username: root
+#  password: flineCloud@2020root
+#  port: 22
+#  path: overlay

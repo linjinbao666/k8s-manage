@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+    <appender name="IMGFILE" class="ch.qos.logback.core.FileAppender">
+        <file>imageBuild.log</file>
+        <encoder>
+            <pattern>
+                %date %level [%thread] %logger{10} [%file:%line] %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+        <filter class="ama.log.LogFilter"></filter>
+    </appender>
+
+    <logger name="com.github.dockerjava">
+        <appender-ref ref="IMGFILE" />
+    </logger>
+    <logger name="ama.controller">
+        <appender-ref ref="IMGFILE" />
+    </logger>
+
+    <logger name="org.springframework.messaging.simp.broker" level="ERROR">
+    </logger>
+
+    <logger name="org.springframework.web.SimpLogging" level="ERROR">
+    </logger>
+    <logger name="org.apache.hc.client5.http.wire" level="ERROR">
+
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

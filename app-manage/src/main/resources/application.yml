@@ -1,0 +1,26 @@
+server:
+  port: 9005
+  servlet:
+    context-path: /app-manage
+logging:
+  file:
+    path: logs
+  config: classpath:logback-spring.xml
+spring:
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: true
+    database-platform: ama.config.MySQL5InnoDBDialectUtf8mb4
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2048MB
+      max-request-size: 2028MB
+      file-size-threshold: 2KB
+  profiles:
+    active: @profile.active@
