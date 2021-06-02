@@ -1,0 +1,32 @@
+server:
+  port: 9006
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://ll.223.41:3306/monitor2
+    username: fdp
+    password: Fdp123!@#
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+kubernetes:
+  admin-conf: classpath:k8s/admin-release.conf
+
+approval:
+  login_url: http://ll.242.211:9090
+  approval_url: http://ll.242.211:9090
+  username: linjb
+  md5Password: e10adc3949ba59abbe56e057f20f883e
+
+prometheus:
+  queryRange:
+    url: http://*.31.2.236:30003/api/v1/query_range
+  query:
+    url: http://*.31.2.236:30003/api/v1/query
+  alert:
+    reloadUrl: http://*.31.2.236:30003/-/reload

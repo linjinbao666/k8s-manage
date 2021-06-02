@@ -1,0 +1,15 @@
+server:
+  port: 9006
+  servlet:
+    context-path: /application-monitor
+spring:
+  application:
+    name: application-monitor
+  profiles:
+    active: @profile.active@
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: true
+    database-platform: monitor.config.MySQL5InnoDBDialectUtf8mb4

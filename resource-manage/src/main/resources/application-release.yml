@@ -1,0 +1,22 @@
+#发版配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://195.4.64.15:3306/ecs?createDatabaseIfNotExist=true&characterEncoding=utf-8
+    username: ll
+    password: 6Ci63J#S4b
+  rabbitmq:
+    addresses: 195.4.64.21
+    username: admin
+    password: admin!@#
+    port: 5672
+kubernetes:
+  admin-conf: classpath:k8s/admin-release.conf
+
+# 工作中心审核地址
+approval:
+  gateway: http://195.4.64.21:9090
+  login_url: http://195.4.64.21:9090/workcenter/api/v1/user/loginWithNoVCode
+  approval_url: http://195.4.64.21:9090/workcenter/api/v1/approval/create
+  username: linjb
+  md5Password: e10adc3949ba59abbe56e057f20f883e

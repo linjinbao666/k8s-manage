@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.20.250.63:3306/monitor2?createDatabaseIfNotExist=true&characterEncoding=utf-8
+    username: ll
+    password: ll!@#
+kubernetes:
+  admin-conf: classpath:k8s/admin-beta.conf
+
+# 普罗米修细http请求
+prometheus:
+  queryRange:
+    url: http://10.20.250.66:30003/api/v1/query_range
+  query:
+    url: http://10.20.250.66:30003/api/v1/query
+  alert:
+    reloadUrl: http://10.20.250.66:30003/-/reload
+
+approval:
+  login_url: http://127.16.1.223:8981
+  approval_url: http://127.16.1.223:8981
+  username: linjb
+  md5Password: e10adc3949ba59abbe56e057f20f883e

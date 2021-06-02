@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://*.23.31.215:3306/monitor2?createDatabaseIfNotExist=true&characterEncoding=utf-8
+    username: fxaicadmin
+    password: 9UvTRB8VESAjQtB5
+
+kubernetes:
+  admin-conf: classpath:k8s/admin-prod.conf
+
+# 普罗米修细http请求
+prometheus:
+  queryRange:
+    url: http://*.23.31.124:30003/api/v1/query_range
+  query:
+    url: http://*.23.31.124:30003/api/v1/query
+  alert:
+    reloadUrl: http://*.23.31.124:30003/-/reload
+
+approval:
+  login_url: http://*.23.31.106:9090
+  approval_url: http://*.23.31.106:9090
+  username: linjb
+  md5Password: e10adc3949ba59abbe56e057f20f883e

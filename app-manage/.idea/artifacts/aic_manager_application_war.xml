@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="aic-manager-application:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>aic-manager-application</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="aic-manager-application-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="aic-manager-application:war exploded" />
+    </root>
+  </artifact>
+</component>

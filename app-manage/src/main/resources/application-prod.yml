@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: app-manage
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://*.23.31.215:3306/ama?createDatabaseIfNotExist=true&characterEncoding=utf-8
+    username: fxaicadmin
+    password: 9UvTRB8VESAjQtB5
+  rabbitmq:
+    addresses: *.23.31.120
+    username: admin
+    password: admin!@#
+    port: 5672
+kubernetes:
+  admin-conf: classpath:k8s/admin-prod.conf
+docker-java:
+  dockerHost: tcp://*.23.31.120:2375
+  registerUrl: *.23.31.122/library
+  username: admin
+  password: Admin@harbor2019
+elasticsearch:
+  name: kubernetes-logging
+  ips: *.23.32.60,*.23.32.54,*.23.32.53,*.23.32.62
+  user: elastic
+  password: 7ttISAYnHtf4Kv9dxEjW
+  port: 9200
+  index: k8s*
+
+# 工作中心审核地址
+approval:
+  gateway: http://*.23.31.106:9090
+
+minio:
+  url: http://*.16.12.22:9000
+  accessKey: minioadmin
+  secretKey: minioadmin
